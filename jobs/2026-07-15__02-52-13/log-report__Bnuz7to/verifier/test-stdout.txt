@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../tests/test_outputs.py F..                                             [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_total_requests ______________________________
+
+    def test_total_requests():
+        """Success criterion 1: total_requests == number of log lines (6)."""
+>       assert load_report()["total_requests"] == 6
+E       assert 7 == 6
+
+/tests/test_outputs.py:14: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_unique_ips
+PASSED ../tests/test_outputs.py::test_top_path
+FAILED ../tests/test_outputs.py::test_total_requests - assert 7 == 6
+========================= 1 failed, 2 passed in 0.02s ==========================
